@@ -29,7 +29,6 @@ public class UserBO {
 	}
 
 	public User checkLogin(String username, String password) {
-		System.out.println("huhu");
 		return userDao.checkLogin(username, password);
 	}
 

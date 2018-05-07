@@ -22,7 +22,6 @@ public class UserDao {
 	}
 
 	public User checkLogin(String username, String password) {
-		System.out.println("checkLogin");
 		conn = connectMySQLDBLibrary.getConnectMySQL();
 		User objUser = null;
 		String sql = "SELECT * FROM user WHERE username = ? && password = ?";

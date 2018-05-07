@@ -14,6 +14,7 @@ public class ReadPropertiesLibrary {
 		String urlFile = getClass().getResource("").getPath();
 		urlFile = urlFile.replaceFirst("/", "");
 		urlFile = urlFile.replaceFirst("/classes/library/", "");
+		System.out.println("file: "+urlFile);
 	try {
 		properties.load(new FileInputStream("/"+urlFile+"/config.properties"));
 	} catch (IOException e) {

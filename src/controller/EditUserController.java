@@ -50,7 +50,6 @@ public class EditUserController extends HttpServlet {
 				}
 			}
 			User objUser = new User(idUser, "", password, fullName, role);
-			System.out.println(objUser.toString());
 			if (userBO.editUser(objUser) != 0) {
 				response.sendRedirect(request.getContextPath() + "/index?msg=2");
 				return;
