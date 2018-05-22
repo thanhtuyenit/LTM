@@ -51,6 +51,7 @@
 %> 
 <%
 if(request.getAttribute("listUser") != null){
+	@SuppressWarnings (value="unchecked")
 	ArrayList<User> listUser = (ArrayList<User>) request.getAttribute("listUser");
 	if(listUser.size() > 0){
 %>
