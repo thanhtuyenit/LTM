@@ -31,12 +31,17 @@ public class EditUserController extends HttpServlet {
 		response.setContentType("text/html");
 		response.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
-		if (session.getAttribute("userInfor") != null && ((User) session.getAttribute("userInfor")).getRole() == 0) {  
+		if (session.getAttribute("userInfor") != null && ((User) session.getAttribute("userInfor")).getRole() == 0) {
+			System.out.println("edit");
 			String fullName = request.getParameter("fullname");
 			String nowPassword = request.getParameter("nowPassword");
 			String password = request.getParameter("password");
 			int idUser = Integer.parseInt(request.getParameter("idUser"));
-			int role = Integer.parseInt(request.getParameter("role"));
+			System.out.println("error");
+			int role = 0;
+			if(request.getParameter("role") != null) {
+				role = Integer.parseInt(request.getParameter("role"));
+			}
 			if (password.equals("")) {
 				// not change password
 				// use old password
